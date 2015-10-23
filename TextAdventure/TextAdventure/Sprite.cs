@@ -16,7 +16,7 @@ namespace TextAdventure
         public readonly int spriteWidth;
         public readonly int spriteHeight;
 
-        public Sprite(int X, int Y, string[] Sprite, ConsoleColor Color)
+        public Sprite(int X, int Y, string[] Sprite, ConsoleColor Color = ConsoleColor.Black)
         { // Needs testing
 
             posX = X;
