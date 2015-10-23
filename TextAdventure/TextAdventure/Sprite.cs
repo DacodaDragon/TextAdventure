@@ -8,39 +8,39 @@ namespace TextAdventure
 {
     class Sprite
     {
-        public readonly ColoredChar[,] sprite;
+        public readonly ColoredChar[,] _sprite;
 
-        public readonly int posX;
-        public readonly int posY;
+        public readonly int _posX;
+        public readonly int _posY;
 
-        public readonly int spriteWidth;
-        public readonly int spriteHeight;
+        public readonly int _spriteWidth;
+        public readonly int _spriteHeight;
 
-        public Sprite(int X, int Y, string[] Sprite, ConsoleColor Color = ConsoleColor.White)
+        public Sprite(int posX, int posY, string[] Sprite, ConsoleColor Color = ConsoleColor.White)
         { // Needs testing
 
-            posX = X;
-            posY = Y;
+            _posX = posX;
+            _posY = posY;
 
-            spriteHeight = Sprite.Length;
-            spriteWidth = Sprite[0].Length;
+            _spriteHeight = Sprite.Length;
+            _spriteWidth = Sprite[0].Length;
 
-            sprite = new ColoredChar[spriteHeight,spriteWidth];
+            _sprite = new ColoredChar[_spriteHeight,_spriteWidth];
 
-            for (int y = 0; y < spriteHeight; y++)
+            for (int y = 0; y < _spriteHeight; y++)
             {
-                for (int x = 0; x < spriteWidth; x++)
+                for (int x = 0; x < _spriteWidth; x++)
                 {
-                    sprite[x, y] = new ColoredChar(Sprite[y][x],Color);
+                    _sprite[x, y] = new ColoredChar(Sprite[y][x],Color);
                 }
             }
         }
 
-        public Sprite(int X, int Y, ColoredChar[,] Sprite)
+        public Sprite(int posX, int posY, ColoredChar[,] Sprite)
         { // work in progress
-            posX = X;
-            posY = Y;
-            sprite = Sprite;
+            _posX = posX;
+            _posY = posY;
+            _sprite = Sprite;
         }
     }
 }
