@@ -32,7 +32,7 @@ namespace TextAdventure
                     if (posY + y > canvasHeight) { continue; }
                     else if (posX + x > canvasWidth) { continue; }
 
-                    canvas[posX + x, posY + y] = new ColoredChar('~', color);
+                    DrawOnCanvas(posX + x, posY + y, new ColoredChar('~', color));
                 }
             }
         }
@@ -43,7 +43,7 @@ namespace TextAdventure
             {
                 for (int x = 0; x < sprite[0].Length; x++)
                 {
-                    canvas[x+_x, y+_y] = new ColoredChar(sprite[y][x], color);
+                    DrawOnCanvas(x +_x, y+_y, new ColoredChar(sprite[y][x], color));
                 }
             }
         }
@@ -56,7 +56,7 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            canvas[x + i, y] = new ColoredChar(text[i],color);
+                            DrawOnCanvas((x + i) - text.Length, y, new ColoredChar(text[i], color));
                         }
                     }
                     break;
@@ -64,7 +64,7 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            canvas[(x + i) - (int)Math.Round(text.Length / 2d), y] = new ColoredChar(text[i], color);
+                            DrawOnCanvas((x + i) - (int)Math.Round(text.Length / 2d), y, new ColoredChar(text[i], color));
                         }
                     }
                     break;
@@ -72,12 +72,19 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            canvas[(x + i) - text.Length, y] = new ColoredChar(text[i], color);
+                            DrawOnCanvas((x + i) - text.Length, y, new ColoredChar(text[i], color));
                         }
                     }
                     break;
             }
+        }
 
+        private void DrawOnCanvas(int x, int y, ColoredChar character)
+        {
+            if (x < 0 || x > canvasWidth) return;
+            if (y < 0 || y > canvasHeight) return;
+
+            canvas[x, y] = character;
         }
 
         public void Render()
@@ -89,14 +96,14 @@ namespace TextAdventure
                     if (i * 2 > Console.BufferWidth - 1) continue;
                     else if (canvas[i, j] == null) continue;
 
-                    Console.SetCursorPosition(i*2, j);
+                    Console.SetCursorPosition(i * 2, j);
                     Console.ForegroundColor = canvas[i, j].colorFront;
                     Console.BackgroundColor = canvas[i, j].colorBack;
-                    Console.Write(canvas[i,j].letter);
+                    Console.Write(canvas[i, j].letter);
                 }
             }
         }
-        
+                
         public void Clear()
         {
             Console.Clear();
