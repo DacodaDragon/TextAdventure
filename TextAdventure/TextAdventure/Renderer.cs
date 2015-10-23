@@ -5,10 +5,13 @@ namespace TextAdventure
 {
     class Renderer
     {
-
         private ColoredChar[,] canvas;
         private int canvasWidth;
         private int canvasHeight;
+        enum textAlingment
+        {
+            left,middle,right
+        }
 
         const ConsoleColor colorMain = ConsoleColor.White;
 
@@ -43,6 +46,38 @@ namespace TextAdventure
                     canvas[x+_x, y+_y] = new ColoredChar(sprite[y][x], color);
                 }
             }
+        }
+
+        void DrawString(int x, int y,string text, textAlingment TextAlignment,ConsoleColor color)
+        {
+            switch (TextAlignment)
+            {
+                case textAlingment.left:
+                    {
+                        for (int i = 0; i < text.Length; i++)
+                        {
+                            canvas[x + i, y] = new ColoredChar(text[i],color);
+                        }
+                    }
+                    break;
+                case textAlingment.middle:
+                    {
+                        for (int i = 0; i < text.Length; i++)
+                        {
+                            canvas[(x + i) - (int)Math.Round(text.Length / 2d), y] = new ColoredChar(text[i], color);
+                        }
+                    }
+                    break;
+                case textAlingment.right:
+                    {
+                        for (int i = 0; i < text.Length; i++)
+                        {
+                            canvas[(x + i) - text.Length, y] = new ColoredChar(text[i], color);
+                        }
+                    }
+                    break;
+            }
+
         }
 
         public void Render()
