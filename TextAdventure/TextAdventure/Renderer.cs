@@ -8,7 +8,7 @@ namespace TextAdventure
         private ColoredChar[,] canvas;
         private int canvasWidth;
         private int canvasHeight;
-        enum textAlingment
+        public enum textAlingment
         {
             left,middle,right
         }
@@ -48,7 +48,7 @@ namespace TextAdventure
             }
         }
 
-        void DrawString(int x, int y,string text, textAlingment TextAlignment,ConsoleColor color)
+        public void DrawString(int x, int y,string text, textAlingment TextAlignment = textAlingment.left,ConsoleColor color = colorMain)
         {
             switch (TextAlignment)
             {

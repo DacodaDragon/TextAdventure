@@ -29,6 +29,7 @@ namespace TextAdventure
 
                 renderer.Clear();
 
+                    renderer.DrawString(1, 1, "HELLO WORLD", Renderer.textAlingment.middle);
                     renderer.DrawSquare(0,0,64, 16, '~', ConsoleColor.Blue);
                     renderer.DrawSprite(4, 4, temp, ConsoleColor.DarkMagenta);
                     renderer.DrawSprite(1, 16, temp, ConsoleColor.Red);
