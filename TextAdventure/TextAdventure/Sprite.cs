@@ -25,13 +25,13 @@ namespace TextAdventure
             _spriteHeight = Sprite.Length;
             _spriteWidth = Sprite[0].Length;
 
-            _sprite = new ColoredChar[_spriteHeight, _spriteWidth];
+            _sprite = new ColoredChar[_spriteHeight,_spriteWidth];
 
             for (int y = 0; y < _spriteHeight; y++)
             {
                 for (int x = 0; x < _spriteWidth; x++)
                 {
-                    _sprite[x, y] = new ColoredChar(Sprite[y][x], Color);
+                    _sprite[x, y] = new ColoredChar(Sprite[y][x],Color);
                 }
             }
         }
