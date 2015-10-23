@@ -91,10 +91,13 @@ namespace TextAdventure
         {
             for (int i = 0; i < canvasWidth; i++)
             {
+                if (i * 2 > Console.WindowWidth - 1) continue;
+
                 for (int j = 0; j < canvasHeight; j++)
                 {
-                    if (i * 2 > Console.BufferWidth - 1) continue;
-                    else if (canvas[i, j] == null) continue;
+                    if (j > Console.WindowHeight) continue;
+
+                    if (canvas[i, j] == null) continue;
 
                     Console.SetCursorPosition(i * 2, j);
                     Console.ForegroundColor = canvas[i, j].colorFront;
