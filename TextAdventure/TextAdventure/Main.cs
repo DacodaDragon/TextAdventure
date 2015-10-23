@@ -5,8 +5,8 @@ namespace TextAdventure
 {
     class Main
     {
-        string TITLE = "Dungeon crawler";
-        float VERSION = 0.00001f;
+        string TITLE = "Dungeon Crawler";
+        string VERSION = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string CREATORS = "Jake and Codi";
 
         bool IS_RUNNING = true;
