@@ -44,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Renderer\ConsoleChar.cs" />
+    <Compile Include="Renderer\Canvas.cs" />
+    <Compile Include="Renderer\ColoredChar.cs" />
     <Compile Include="Main\Main.cs" />
     <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
