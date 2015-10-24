@@ -8,6 +8,8 @@ namespace TextAdventure
 {
     class Renderer
     {
+        private Canvas previousRender;
+        
         #region Singleton
         // Create Renderer Singleton
 
@@ -23,14 +25,9 @@ namespace TextAdventure
                 return instance;
             }
         }
-
         #endregion
 
-        public void Render()
-        {
-            // render all the things
-        }
-
+        #region Drawing
         public void DrawSprite(Sprite sprite, int posX, int posY, ConsoleColor color = ConsoleColor.White)
         {
             // draw all the sprites
@@ -39,6 +36,13 @@ namespace TextAdventure
         public void DrawCanvas(Canvas canvas)
         {
             // draw all the canvases
+        }
+
+        #endregion
+
+        public void Render()
+        {
+            // render all the things
         }
     }
 }
