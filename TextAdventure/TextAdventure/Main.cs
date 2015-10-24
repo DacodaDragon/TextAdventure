@@ -10,13 +10,13 @@ namespace TextAdventure
         string CREATORS = "Jake and Codi";
 
         bool IS_RUNNING = true;
-        Renderer renderer;
+        ObsoleteRenderer renderer;
 
         public void start()
         {
             Console.Title = TITLE + " | Version " + VERSION + " | " + CREATORS;
             
-            renderer = new Renderer();
+            renderer = new ObsoleteRenderer();
             renderer.ScreenInit(64,64);
         }
 
@@ -37,7 +37,7 @@ namespace TextAdventure
                     renderer.DrawSprite(2, 50, temp, ConsoleColor.Cyan);
                     renderer.DrawSprite(20, 40, temp, ConsoleColor.Red);
                     renderer.DrawSprite(50, 10, temp, ConsoleColor.Green);
-                    renderer.DrawString(10, 1, "HELLO WORLD", Renderer.textAlingment.middle);
+                    renderer.DrawString(10, 1, "HELLO WORLD", ObsoleteRenderer.textAlingment.middle);
 
                 renderer.Render();
 
