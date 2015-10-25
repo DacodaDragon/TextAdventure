@@ -42,6 +42,7 @@ namespace TextAdventure
     {
         public readonly Char[,] sprite;
         public readonly SpriteRect rect;
+        public readonly string name;
 
         public Sprite(string[] Sprite, SpritePosition _position, ConsoleColor Color = ConsoleColor.White)
         { // Needs testing
