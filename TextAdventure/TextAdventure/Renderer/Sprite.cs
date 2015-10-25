@@ -63,8 +63,8 @@ namespace TextAdventure
 
         public Sprite(Char[,] Sprite, SpritePosition _position)
         { // work in progress
-            _posX = posX;
-            _posY = posY;
+            //_posX = posX;
+            //_posY = posY;
             sprite = Sprite;
         }
     }

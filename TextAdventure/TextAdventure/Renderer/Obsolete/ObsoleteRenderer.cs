@@ -33,7 +33,7 @@ namespace TextAdventure
                     if (posY + y > canvasHeight) { continue; }
                     else if (posX + x > canvasWidth) { continue; }
 
-                    DrawOnCanvas(posX + x, posY + y, new Char('~', color));
+                    DrawOnCanvas(posX + x, posY + y, new Char(character, color));
                 }
             }
         }
