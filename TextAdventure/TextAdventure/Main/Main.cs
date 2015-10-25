@@ -30,11 +30,13 @@ namespace TextAdventure
 
                 renderer.Render();
 
-                Input();
+                Player player = new Player();
+
+                Input(player);
             }
         }
 
-        private void Input()
+        private void Input(Player player)
         {
             ConsoleKey keyPress = Console.ReadKey(true).Key;
 
@@ -45,19 +47,27 @@ namespace TextAdventure
                     break;
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    // go up
+                    player.Move(PlayerDirection.Up); // change player direction
+                    // TODO: // move player sprite
+                    // TODO: // move canvas
                     break;
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
-                    // go down
+                    player.Move(PlayerDirection.Down); // change player direction
+                    // TODO: // move player sprite
+                    // TODO: // move canvas
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    // go left
+                    player.Move(PlayerDirection.Left); // change player direction
+                    // TODO: // move player sprite
+                    // TODO: // move canvas
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    // go right
+                    player.Move(PlayerDirection.Right); // change player direction
+                    // TODO: // move player sprite
+                    // TODO: // move canvas
                     break;
             }
         }
