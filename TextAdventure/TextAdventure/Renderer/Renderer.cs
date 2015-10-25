@@ -9,7 +9,8 @@ namespace TextAdventure
     class Renderer
     {
         private Canvas previousRender;
-        
+        private Canvas currentRender;
+
         #region Singleton
         // Create Renderer Singleton
 
@@ -28,6 +29,7 @@ namespace TextAdventure
         #endregion
 
         #region Drawing
+
         public void DrawSprite(Sprite sprite, int posX, int posY, ConsoleColor color = ConsoleColor.White)
         {
             // draw all the sprites
@@ -43,6 +45,11 @@ namespace TextAdventure
         public void Render()
         {
             // render all the things
+        }
+
+        public void Clear()
+        {
+            Console.Clear();
         }
     }
 }
