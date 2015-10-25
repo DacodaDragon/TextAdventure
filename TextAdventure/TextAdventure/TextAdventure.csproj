@@ -53,6 +53,7 @@
     <Compile Include="Renderer\Player.cs" />
     <Compile Include="Renderer\Renderer.cs" />
     <Compile Include="Renderer\Sprite.cs" />
+    <Compile Include="Renderer\SpritePool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

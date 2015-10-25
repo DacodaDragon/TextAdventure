@@ -2,41 +2,69 @@
 
 namespace TextAdventure
 {
+    #region Structures
+
+    public struct SpriteSize
+    {
+        public readonly int width, height;
+        public SpriteSize(int _width, int _height)
+        {
+            width = _width;
+            height = _height;
+        }
+    }
+
+    public struct SpritePosition
+    {
+        public readonly int x, y;
+        public SpritePosition(int _x, int _y)
+        {
+            x = _x;
+            y = _y;
+        }
+    }
+
+    public struct SpriteRect
+    {
+        SpritePosition position;
+        SpriteSize size;
+
+        public SpriteRect(SpritePosition _position, SpriteSize _size)
+        {
+            position = _position;
+            size = _size;
+        }
+    }
+
+#endregion
+
     class Sprite
     {
-        public readonly Char[,] _sprite;
+        public readonly Char[,] sprite;
+        public readonly SpriteRect rect;
 
-        public readonly int _posX;
-        public readonly int _posY;
-
-        public readonly int _spriteWidth;
-        public readonly int _spriteHeight;
-
-        public Sprite(int posX, int posY, string[] Sprite, ConsoleColor Color = ConsoleColor.White)
+        public Sprite(string[] Sprite, SpritePosition _position, ConsoleColor Color = ConsoleColor.White)
         { // Needs testing
 
-            _posX = posX;
-            _posY = posY;
+            SpriteSize size = new SpriteSize(Sprite[0].Length, Sprite.Length);
+            rect = new SpriteRect(_position, size);
 
-            _spriteHeight = Sprite.Length;
-            _spriteWidth = Sprite[0].Length;
+            sprite = new Char[size.height,size.width];
 
-            _sprite = new Char[_spriteHeight,_spriteWidth];
-
-            for (int y = 0; y < _spriteHeight; y++)
+            for (int x = 0; x < size.width; x++)
             {
-                for (int x = 0; x < _spriteWidth; x++)
+                for (int y = 0; y < size.height; y++)
                 {
-                    _sprite[x, y] = new Char(Sprite[y][x],Color);
+                    sprite[x, y] = new Char(Sprite[y][x], Color);
                 }
             }
         }
 
-        public Sprite(int posX, int posY, Char[,] Sprite)
+        public Sprite(Char[,] Sprite, SpritePosition _position)
         { // work in progress
             _posX = posX;
             _posY = posY;
-            _sprite = Sprite;
+            sprite = Sprite;
         }
     }
 }
