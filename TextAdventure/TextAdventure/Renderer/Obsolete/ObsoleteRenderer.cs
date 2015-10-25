@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Threading;
 
 namespace TextAdventure
 {
     class ObsoleteRenderer
     {
-        private ColoredChar[,] canvas;
+        private Char[,] canvas;
 
         private int canvasWidth;
         private int canvasHeight;
@@ -19,7 +18,7 @@ namespace TextAdventure
 
         public void ScreenInit(int SizeX, int SizeY)
         {
-            canvas = new ColoredChar[SizeX,SizeY];
+            canvas = new Char[SizeX,SizeY];
             canvasWidth = SizeX;
             canvasHeight = SizeY;
         }
@@ -34,7 +33,7 @@ namespace TextAdventure
                     if (posY + y > canvasHeight) { continue; }
                     else if (posX + x > canvasWidth) { continue; }
 
-                    DrawOnCanvas(posX + x, posY + y, new ColoredChar('~', color));
+                    DrawOnCanvas(posX + x, posY + y, new Char('~', color));
                 }
             }
         }
@@ -45,7 +44,7 @@ namespace TextAdventure
             {
                 for (int x = 0; x < sprite[0].Length; x++)
                 {
-                    DrawOnCanvas(x +_x, y+_y, new ColoredChar(sprite[y][x], color));
+                    DrawOnCanvas(x +_x, y+_y, new Char(sprite[y][x], color));
                 }
             }
         }
@@ -58,7 +57,7 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            DrawOnCanvas((x + i) - text.Length, y, new ColoredChar(text[i], color));
+                            DrawOnCanvas((x + i) - text.Length, y, new Char(text[i], color));
                         }
                     }
                     break;
@@ -66,7 +65,7 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            DrawOnCanvas((x + i) - (int)Math.Round(text.Length / 2d), y, new ColoredChar(text[i], color));
+                            DrawOnCanvas((x + i) - (int)Math.Round(text.Length / 2d), y, new Char(text[i], color));
                         }
                     }
                     break;
@@ -74,14 +73,14 @@ namespace TextAdventure
                     {
                         for (int i = 0; i < text.Length; i++)
                         {
-                            DrawOnCanvas((x + i) - text.Length, y, new ColoredChar(text[i], color));
+                            DrawOnCanvas((x + i) - text.Length, y, new Char(text[i], color));
                         }
                     }
                     break;
             }
         }
 
-        private void DrawOnCanvas(int x, int y, ColoredChar character)
+        private void DrawOnCanvas(int x, int y, Char character)
         {
             if (x < 0 || x > canvasWidth) return;
             if (y < 0 || y > canvasHeight) return;

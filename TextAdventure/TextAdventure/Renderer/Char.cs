@@ -2,13 +2,13 @@
 
 namespace TextAdventure
 {
-    class ColoredChar
+    class Char
     {
-        public readonly char letter;
+        public readonly char letter; 
         public readonly ConsoleColor colorFront;
         public readonly ConsoleColor colorBack;
         
-        public ColoredChar(char character, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
+        public Char(char character, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
             letter = character;
             colorFront = foreground;

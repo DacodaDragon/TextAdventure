@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TextAdventure
+﻿namespace TextAdventure
 {
     public struct CanvasFrame
     {
-        public int width, height;
+        public readonly int width, height;
 
         public CanvasFrame(int _width, int _height)
         {
@@ -19,8 +13,11 @@ namespace TextAdventure
 
     class Canvas
     {
-        CanvasFrame canvasFrame;
-
-
+        CanvasFrame frame;
+        
+        void Init()
+        {
+            frame = new CanvasFrame(1, 1);
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace TextAdventure
 {
     class Sprite
     {
-        public readonly ColoredChar[,] _sprite;
+        public readonly Char[,] _sprite;
 
         public readonly int _posX;
         public readonly int _posY;
@@ -21,18 +21,18 @@ namespace TextAdventure
             _spriteHeight = Sprite.Length;
             _spriteWidth = Sprite[0].Length;
 
-            _sprite = new ColoredChar[_spriteHeight,_spriteWidth];
+            _sprite = new Char[_spriteHeight,_spriteWidth];
 
             for (int y = 0; y < _spriteHeight; y++)
             {
                 for (int x = 0; x < _spriteWidth; x++)
                 {
-                    _sprite[x, y] = new ColoredChar(Sprite[y][x],Color);
+                    _sprite[x, y] = new Char(Sprite[y][x],Color);
                 }
             }
         }
 
-        public Sprite(int posX, int posY, ColoredChar[,] Sprite)
+        public Sprite(int posX, int posY, Char[,] Sprite)
         { // work in progress
             _posX = posX;
             _posY = posY;
