@@ -48,7 +48,7 @@
     <Compile Include="Renderer\TerrainRenderer.cs" />
     <Compile Include="Renderer\Types\Canvas.cs" />
     <Compile Include="Renderer\Types\Char.cs" />
-    <Compile Include="Main\Main.cs" />
+    <Compile Include="Main\Game.cs" />
     <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\Obsolete\ObsoleteRenderer.cs" />
