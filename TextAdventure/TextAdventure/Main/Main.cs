@@ -2,7 +2,7 @@
 
 namespace TextAdventure
 {
-    class Main
+    class Game
     {
         bool isRunning = true;
 

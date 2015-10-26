@@ -12,7 +12,7 @@ namespace TextAdventure
             string _creators = "Errorcodebin and RaveCode";
             Console.Title = _title + " | Version " + _version + " | by " + _creators;
 
-            Main prog = new Main();
+            Game prog = new Game();
             prog.Start();
         }
     }
