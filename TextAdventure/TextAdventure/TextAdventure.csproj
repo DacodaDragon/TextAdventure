@@ -44,20 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Renderer\Canvas.cs" />
-    <Compile Include="Renderer\Char.cs" />
+    <Compile Include="Renderer\SpriteRenderer.cs" />
+    <Compile Include="Renderer\TerrainRenderer.cs" />
+    <Compile Include="Renderer\Types\Canvas.cs" />
+    <Compile Include="Renderer\Types\Char.cs" />
     <Compile Include="Main\Main.cs" />
     <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\Obsolete\ObsoleteRenderer.cs" />
-    <Compile Include="Renderer\Player.cs" />
+    <Compile Include="Controllers\Player.cs" />
     <Compile Include="Renderer\Renderer.cs" />
-    <Compile Include="Renderer\Sprite.cs" />
-    <Compile Include="Renderer\SpritePool.cs" />
+    <Compile Include="Renderer\Types\Sprite.cs" />
+    <Compile Include="DataHandling\SpritePool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

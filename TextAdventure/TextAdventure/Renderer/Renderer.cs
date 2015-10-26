@@ -24,25 +24,6 @@ namespace TextAdventure
         }
         #endregion
 
-        #region Drawing
-
-        public void DrawSprite(Sprite sprite, int posX, int posY, ConsoleColor color = ConsoleColor.White)
-        {
-            // draw all the sprites
-        }
-
-        public void DrawCanvas(Canvas canvas)
-        {
-            // draw all the canvases
-        }
-
-        #endregion
-
-        public void Render()
-        {
-            // render all the things
-        }
-
         public void Clear()
         {
             Console.Clear();
