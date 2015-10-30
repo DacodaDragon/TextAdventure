@@ -13,11 +13,10 @@
 
     class Canvas
     {
-        CanvasFrame frame;
-        
-        void Init()
+        public readonly CanvasFrame frame;
+        public Canvas(int _width, int _height)
         {
-            frame = new CanvasFrame(1, 1);
+            frame = new CanvasFrame(10, 10);
         }
     }
 }
